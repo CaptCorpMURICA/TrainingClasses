@@ -1,0 +1,82 @@
+Intro to Pandas:
+- REAL docs: https://pandas.pydata.org/pandas-docs/stable/
+- Tutorial: https://pythonprogramming.net/data-analysis-python-pandas-tutorial-introduction/
+- Introductory Material: https://towardsdatascience.com/a-quick-introduction-to-the-pandas-python-library-f1b678f34673
+
+Some helpful insights on Statistics:
+https://www.statsmodels.org/stable/diagnostic.html
+
+My favorite DS blogger:
+https://towardsdatascience.com/@williamkoehrsen
+
+Speediness of Linear Regression Techniques in Python:
+https://www.freecodecamp.org/news/data-science-with-python-8-ways-to-do-linear-regression-and-measure-their-speed-b5577d75f8b/
+
+Reducing memory with Pandas:
+https://www.dataquest.io/blog/pandas-big-data/
+
+Simple Linear Model Example:
+https://www.kaggle.com/loknath2017/housing-linear-regression-in-python
+
+Common Machine Learning Algorithms (but new ones are made everyday!):
+https://www.analyticsvidhya.com/blog/2017/09/common-machine-learning-algorithms/
+
+Steps to Making a Model:
+  1) Gather Data
+  2) Prepare Data
+    a) EDA
+    b) Check for assumptions of model
+    c) Features
+      i) Feature Selection/Dimensionality Reduction
+      ii) Feature Engineering
+  3) Choose Model
+  4) Training
+  5) Evaluation
+  6) Hyperparameter Tuning
+  7) Prediction
+
+Class challenge: write a function to take your data and run these stats on it to check for the 5 things that need to be determined before any linear regression model is performed.
+	Point to consider: What about categorical variables? Outliers? 
+  
+5 Things to Check Before Linear Regression:
+  1) Linearity
+	  a) is the relationship between X and Y linear
+  2) Little/no collinearity
+  	a) utilize correlation matrix to determine pairwise correlations
+  	b) after building a model, run variance inflation factor which quantifies the severity of multicollinearity in OLS regression
+	  	i) VIFs between 1 and 5 suggest that there is a moderate correlation, but it is not severe enough to warrant corrective measures. VIFs greater than 5 represent critical levels of multicollinearity where the coefficients are poorly estimated, and the p-values are questionable.
+  	c) Watchouts for collinearity in data:
+	  	i) A regression coefficient is not significant even though, theoretically, that variable should be highly correlated with Y.
+		  ii) When you add or delete an X variable, the regression coefficients change dramatically.
+		  iii) You see a negative regression coefficient when your response should increase along with X.
+		  iv) You see a positive regression coefficient when the response should decrease as X increases.
+		  v) Your X variables have high pairwise correlations. 
+	  d) Two main fixes for collinearity: Remove one of the offending correlated variables OR utilize PLS (Partial Least Squares Regression) or PCA (Principal Component Analysis)
+3) Multivariate Normality
+	  a) Normal distribution: Mean zero, constant variance
+		  i) This means the distribution of data should look like a gaussian distribution. Sometimes a good fix is to take the log of the data to make it normal. This can also be tested with a K-S test.
+		  ii) QQ plots are: 
+		  iii) skewness and kurtosis are:
+4) Homoscedasticity (homogeneity of variance)
+	  a) residuals should be spread relatively equally among the ranges of predictors
+	  b) LS gives equal weight to all observations, larger disturbances have more pull than others 
+which shoes when heteroscedasticity is present
+	  c) A test of this is the Goldfeld-Quandt test.
+5) No autocorrelation of residuals
+	  a) Durbin-Watson test can be used to determine the independence of data
+	  b) This produces ‘d’ values and ‘d’ values of 1.5 &lt; d &lt; 2.5 generally means no
+autocorrelation.
+--> A really good resource on this is here: 
+https://boostedml.com/2018/08/testing-linear-regression-assumptions-the-kaggle-housing-price-dataset.html
+
+How to deal with skew: 
+https://medium.com/@TheDataGyan/day-8-data-transformation-skewness-normalization-and-much-more-4c144d370e55
+
+Help! My dataset didn't pass all 5 tests for Linearity!:
+https://www.analyticsvidhya.com/blog/2016/07/deeper-regression-analysis-assumptions-plots-solutions/
+
+Model scoring: 
+https://scikit-learn.org/stable/modules/model_evaluation.html
+
+Train/Test, cross validation: 
+https://towardsdatascience.com/train-test-split-and-cross-validation-in-python-80b61beca4b6
