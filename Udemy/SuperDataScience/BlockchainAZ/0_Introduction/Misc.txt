@@ -1,0 +1,6 @@
+Podcast:
+https://www.superdatascience.com/podcast-rise-of-blockchain/
+
+Important Tools:
+https://tools.superdatascience.com/blockchain/hash/
+https://tools.superdatascience.com/blockchain/public-private-keys/signatures
